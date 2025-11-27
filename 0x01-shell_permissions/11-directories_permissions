@@ -1,0 +1,7 @@
+#!/bin/bash
+# Adds execute permission to all subdirectories in the current directory
+# for owner, group, and others, without affecting regular files.
+
+for dir in */; do
+    [ -d "$dir" ] && chmod +x "$dir"
+done
