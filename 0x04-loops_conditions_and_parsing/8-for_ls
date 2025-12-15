@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# List non-hidden items; print only the substring after the first dash (or the full name if no dash)
+
+for f in *; do
+  # Skip if glob didn't match anything
+  [ -e "$f" ] || continue
+  part="${f#*-}"
+  if [[ "$f" == "$part" ]]; then
+    echo "$f"
+  else
+    echo "$part"
+  fi
+done
